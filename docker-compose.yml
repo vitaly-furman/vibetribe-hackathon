@@ -66,7 +66,7 @@ services:
       POSTGRES_DB: "gerobug_db"
       POSTGRES_USER: "gerobug"
     volumes:
-      - ./db_data/:/var/lib/postgresql/data/
+      - db-data:/var/lib/postgresql/data/
       - ./gerobug_hba.conf:/opt/gerobug_hba.conf
     restart: unless-stopped
     logging:
@@ -76,3 +76,4 @@ services:
 volumes:
   static-content:
   static-files:
+  db-data:
